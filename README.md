@@ -1,6 +1,5 @@
-```
-```python?code_reference&code_event_index=6
-content = r"""# ⚙️ AutoSQE
+# ⚙️ AutoSQE
+
 **An autonomous, multi-agent AI system for rigorous Software Quality Engineering & Documentation.**
 
 ---
@@ -9,54 +8,76 @@ content = r"""# ⚙️ AutoSQE
 
 If there is one universal bottleneck in software development, it is translating a great idea into rigorous, testable documentation. **AutoSQE** tackles this friction head-on by ingesting a raw project concept and automatically orchestrating a pipeline of AI personas to generate industry-standard **Software Requirements Specifications (SRS)**, **Requirement Traceability Matrices (RTM)**, and comprehensive **Test Cases**.
 
+---
+
 ## 🚀 Architecture & Agent Workflow
 
 Instead of relying on a single, massive LLM prompt, this system utilizes a multi-agent workflow to ensure high-fidelity, testable outputs.
 
-> **1️⃣ Product Architect Agent** > Expands the initial user concept to define system boundaries, core objectives, and target user personas.
+### 1️⃣ Product Architect Agent
+Expands the initial user concept to define:
+- System boundaries
+- Core objectives
+- Target user personas
 
-> **2️⃣ Systems Analyst Agent** > Ingests the architectural vision and outputs a strict JSON payload categorized into Functional (FR) and Non-Functional (NFR) Requirements.
+### 2️⃣ Systems Analyst Agent
+Analyzes the architectural vision and generates a structured JSON document containing:
+- Functional Requirements (FR)
+- Non-Functional Requirements (NFR)
 
-> **3️⃣ QA Engineer Agent** > Maps the generated requirements to an RTM and drafts initial boundary-value test cases.
+### 3️⃣ QA Engineer Agent
+Creates:
+- Requirement Traceability Matrix (RTM)
+- Boundary Value Test Cases
+- Initial Software Test Documentation
 
 ---
 
 ## 🛠 Tech Stack
 
 | Component | Technology | Description |
-| :--- | :--- | :--- |
-| **Backend API** | FastAPI | High-performance, asynchronous Python framework. |
-| **Orchestration** | LangGraph / CrewAI | Manages the multi-agent state and routing. |
-| **LLM Engine** | OpenAI API | Powers the agent personas for generation. |
-| **Formatting** | JSON & Markdown | Ensures strict, parseable document generation. |
+|-----------|------------|-------------|
+| **Backend API** | FastAPI | High-performance asynchronous Python framework |
+| **Orchestration** | LangGraph / CrewAI | Multi-agent workflow management |
+| **LLM Engine** | OpenAI API | Powers intelligent AI agents |
+| **Formatting** | JSON & Markdown | Structured, parseable document generation |
 
 ---
 
 ## 📦 Installation & Setup
 
-**1. Clone the repository:**
-```
-```text?code_stdout&code_event_index=6
-Created README.md
+### 1. Clone the Repository
 
 ```bash
-git clone [https://github.com/yourusername/AutoSQE.git](https://github.com/yourusername/AutoSQE.git)
+git clone https://github.com/yourusername/AutoSQE.git
 cd AutoSQE
 ```
 
-**2. Create a virtual environment:**
+### 2. Create a Virtual Environment
+
+**Linux/macOS**
+
 ```bash
 python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+source venv/bin/activate
 ```
 
-**3. Install dependencies:**
+**Windows**
+
+```bash
+venv\Scripts\activate
+```
+
+### 3. Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-**4. Configure Environment Variables:**
-Create a `.env` file in the root directory and add your API keys:
+### 4. Configure Environment Variables
+
+Create a `.env` file in the project root:
+
 ```env
 LLM_API_KEY=your_api_key_here
 ```
@@ -65,24 +86,81 @@ LLM_API_KEY=your_api_key_here
 
 ## 💻 Usage
 
-Start the backend server:
+Start the FastAPI server:
+
 ```bash
 uvicorn main:app --reload
 ```
-Navigate to `http://127.0.0.1:8000/docs` to test the API directly via the Swagger UI. Submit a JSON payload with your `project_name` and `core_problem` to initiate the agent workflow.
+
+Open your browser and visit:
+
+```
+http://127.0.0.1:8000/docs
+```
+
+Use the interactive Swagger UI to test the API by submitting a JSON payload containing:
+
+- `project_name`
+- `core_problem`
+
+The system will automatically execute the multi-agent workflow and generate:
+
+- Software Requirements Specification (SRS)
+- Requirement Traceability Matrix (RTM)
+- Software Test Cases
+
+---
+
+## ✨ Features
+
+- 🤖 Multi-Agent AI Architecture
+- 📄 Automatic SRS Generation
+- 📋 Requirement Traceability Matrix (RTM)
+- ✅ Automated Test Case Generation
+- ⚡ FastAPI Backend
+- 🧠 LLM-powered Documentation
+- 📑 Structured JSON Output
+- 🔄 Modular Agent Pipeline
+
+---
+
+## 📂 Project Structure
+
+```text
+AutoSQE/
+│
+├── agents/
+│   ├── product_architect.py
+│   ├── systems_analyst.py
+│   └── qa_engineer.py
+│
+├── api/
+├── prompts/
+├── models/
+├── utils/
+├── main.py
+├── requirements.txt
+├── .env
+└── README.md
+```
 
 ---
 
 ## 🙏 Acknowledgments
 
-A massive thank you to **Lec. Afeera Bint e Tanveer** for her exceptional mentorship. The technical rigor, SRS fundamentals, and SQE principles driving this project's architecture are a direct result of her instruction in Software Quality Engineering.
+Special thanks to **Lec. Afeera Bint e Tanveer** for her exceptional mentorship. The Software Requirements Specification (SRS), Software Quality Engineering (SQE), and documentation principles implemented in this project are inspired by her guidance and instruction.
+
+---
 
 ## 👨‍💻 Author
 
-**Muhammad Anas Mahmood** Founder & President, The DevLoop Society | Software Engineer
-"""
+**Muhammad Anas Mahmood**
 
-with open("README.md", "w", encoding="utf-8") as f:
-    f.write(content)
+Software Engineer  
+Founder & President — The DevLoop Society
 
-print("Created README.md")
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
