@@ -157,7 +157,6 @@ Special thanks to **Lec. Afeera Bint e Tanveer** for her exceptional mentorship.
 **Muhammad Anas Mahmood**
 
 Software Engineer  
-Founder & President — The DevLoop Society
 
 ---
 
