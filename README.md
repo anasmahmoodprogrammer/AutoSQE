@@ -159,7 +159,3 @@ Special thanks to **Lec. Afeera Bint e Tanveer** for her exceptional mentorship.
 Software Engineer  
 
 ---
-
-## 📄 License
-
-This project is licensed under the MIT License.
