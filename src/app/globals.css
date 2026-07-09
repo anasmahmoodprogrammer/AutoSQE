@@ -1,0 +1,184 @@
+:root {
+  /* Lavender & Peach Pastel Theme Variables */
+  --bg-color: #f3e8ff; /* Soft lavender background */
+  --text-primary: #4c1d95; /* Deep plum text */
+  --text-muted: #7c3aed; /* Lighter plum for secondary text */
+  --card-bg: #ffffff; /* Clean white cards */
+  --primary-btn: linear-gradient(135deg, #ffb8b8, #ff9a9e); /* Soft peach gradient */
+  --primary-btn-hover: linear-gradient(135deg, #ffa8a8, #ff8a8e);
+  --border-radius: 1.25rem;
+  --shadow-soft: 0 10px 40px rgba(124, 58, 237, 0.1);
+  --border-color: rgba(124, 58, 237, 0.1);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+}
+
+/* Typography Overrides */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+p {
+  color: var(--text-muted);
+}
+
+/* Custom Card Styling */
+.pastel-card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pastel-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 50px rgba(124, 58, 237, 0.15);
+}
+
+/* Custom Buttons */
+.btn-pastel {
+  background: var(--primary-btn);
+  color: #fff !important;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(255, 154, 158, 0.4);
+  transition: all 0.2s ease;
+}
+
+.btn-pastel:hover:not(:disabled) {
+  background: var(--primary-btn-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(255, 154, 158, 0.5);
+}
+
+.btn-pastel:disabled {
+  opacity: 0.6;
+  background: #e2e8f0;
+  color: #94a3b8 !important;
+  box-shadow: none;
+}
+
+/* Input Fields */
+.form-control-pastel {
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 0.75rem;
+  color: var(--text-primary);
+  padding: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control-pastel:focus {
+  border-color: #d8b4fe;
+  box-shadow: 0 0 0 4px rgba(216, 180, 254, 0.3);
+  outline: none;
+}
+
+/* Animations */
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pulse-pastel {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.4); }
+  50% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(124, 58, 237, 0); }
+}
+
+.pulse-dot {
+  width: 2rem;
+  height: 2rem;
+  background: linear-gradient(135deg, #c084fc, #a855f7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+
+.pulse-dot.active {
+  animation: pulse-pastel 2s infinite;
+}
+
+.pulse-dot.done {
+  background: #34d399; /* Mint green for done */
+}
+
+.pulse-dot.pending {
+  background: #e2e8f0;
+  color: #94a3b8;
+}
+
+/* Markdown Specifics */
+.prose {
+  line-height: 1.8;
+}
+
+.prose h1, .prose h2, .prose h3 {
+  color: var(--text-primary);
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.prose h2 {
+  font-size: 1.75rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.prose pre {
+  background: #f8fafc;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  overflow-x: auto;
+}
+
+.prose code {
+  color: #db2777; /* Playful pink for inline code */
+  background: #fce7f3;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+.prose pre code {
+  color: var(--text-primary);
+  background: none;
+  padding: 0;
+}
+
+/* Ensure bootstrap tables have nice rounded corners inside cards */
+.table-responsive {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.table th {
+  background-color: #fdf2f8 !important; /* Extremely soft pink header */
+  color: var(--text-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  border-bottom-width: 2px;
+}
